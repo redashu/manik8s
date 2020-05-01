@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: ashupod1   # lower case char
+
+spec:
+ containers:
+  - image: nginx  #  this will be pulled from Docker hub
+    name: ashuc1   # optional field 
+    ports:   # optional field  
+     - containerPort: 80  #  same as expose in Dockerfile

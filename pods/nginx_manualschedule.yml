@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: ashupod2   # lower case char
+
+spec:
+ nodeName: ip-172-31-84-182.ec2.internal   #  worknode IP|hostname
+ containers:
+  - image: nginx  #  this will be pulled from Docker hub
+    name: ashuc1   # optional field 
+    ports:   # optional field  
+     - containerPort: 80  #  same as expose in Dockerfile
