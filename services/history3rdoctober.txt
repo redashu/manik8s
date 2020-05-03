@@ -1,0 +1,32 @@
+ 1942  mkdir  services
+ 1943  ls
+ 1944  cd  services/
+ 1945  ls
+ 1946  kubectl create   service   nodeport   ashus1  --tcp  80  --dry-run  -o yaml
+ 1947  kubectl create   service   nodeport   ashus1  --tcp  80  --dry-run  -o yaml  >ashus1.yml
+ 1948  vim ashus1.yml 
+ 1949  kubectl create   service   nodeport   ashus1  --tcp  81  --dry-run  -o yaml
+ 1950  ls
+ 1951  vim ashus1.yml 
+ 1952  kubectl create  -f  ashus1.yml 
+ 1953  kubectl get  service
+ 1954  ls
+ 1955  kubectl run manipod1  --image=maninderbhui/tomcat:v1  --port 8080 --restart Never --dry-run  -o yaml 
+ 1956  kubectl run manipod1  --image=maninderbhui/tomcat:v1  --port 8080 --restart Never --dry-run  -o yaml   >../pods/manipod.yml
+ 1957  vim ../pods/manipod.yml 
+ 1958  kubectl create -f   ../pods/manipod.yml 
+ 1959  kubectl get po  -w
+ 1960  kubectl get po  
+ 1961  kubectl get po   --show-labels 
+ 1962  kubectl get po  manipod1  --show-labels 
+ 1963  pwd
+ 1964  ls
+ 1965  kubectl create  service  nodeport manis1 --tcp 8080 --dry-run -o yaml 
+ 1966  kubectl create  service  nodeport manis1 --tcp 8080 --dry-run -o yaml   >manis1.yml
+ 1967  kubectl get po  manipod1  --show-labels 
+ 1968  vim manis1.yml 
+ 1969  kubectl create -f  manis1.yml 
+ 1970  kubectl get svc 
+ 1971  history 
+ 1972  kubectl get  svc 
+

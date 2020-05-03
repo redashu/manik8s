@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ashus1   # name of service 
+spec:
+  ports:
+  - name: myport
+    port: 80    # this can't be ignored and it will be binded with service IP as well
+    protocol: TCP  
+    targetPort: 80  #  pod port where service will forward the traffic 
+  selector:
+    x: hello    # this must match with pod label
+  type: NodePort
