@@ -1,0 +1,28 @@
+033  kubectl apply  -f  myfirstrc.yml 
+ 2034  kubectl get  rc
+ 2035  kubectl get  replicationcontrollers 
+ 2036  kubectl get po
+ 2037  kubectl get po -o wide
+ 2038  kubectl get po --show-labels 
+ 2039  cat  myfirstrc.yml 
+ 2040  kubectl get rc
+ 2041  kubectl expose  replicationcontroller ashurc1  --type NodePort --port 80 
+ 2042  kubectl get svc
+ 2043  kubectl get svc  ashurc1  -o yaml
+ 2044  kubectl get po --show-labels 
+ 2045  history 
+ 2046  cd ..
+ 2047  ls
+ 2048  cd pods/
+ 2049  ls
+ 2050  cat  manipod.yml 
+ 2051  kubectl apply -f  manipod.yml 
+ 2052  kubectl get po
+ 2053  kubectl get po -w
+ 2054  kubectl get po 
+ 2055  kubectl expose pod manipod1   --type NodePort --port 80 
+ 2056  kubectl get svc
+ 2057  kubectl delete svc  manipod1 
+ 2058  kubectl expose pod manipod1   --type NodePort --port 8080 
+ 2059  kubectl get svc
+
