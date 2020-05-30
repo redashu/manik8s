@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: manipodrev   #  label of pod
+    x: manipod    #  label of pod
+  name: manipodrev  # name of pod
+spec:
+  containers:
+  - image: nginx
+    name: manipodrev
+    ports:
+    - containerPort: 80
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: mysvc   # there is no use of label of service as of now 
+  name: mysvc
+spec:
+  ports:
+  - name: myport
+    port: 1123   #  port of  service  --serviceIP:port 
+    protocol: TCP
+    targetPort: 80  #  this port must be same as  pod port 
+  selector:
+    run: manipodrev   #  label of pod
+    x: manipod    #  label of pod
+  type: NodePort
+status:
+  loadBalancer: {}

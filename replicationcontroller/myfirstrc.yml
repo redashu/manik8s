@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+ name: ashurc1
+ labels:
+  x: hello   #  this is label of RC  we will se the use of label of RC in future
+
+spec:
+ replicas: 2  #  RC will update two pod in every condition 
+ template:    #  rc will use this template to create pods 
+  metadata:
+   name: mypoddd1
+   labels:
+    y: manipo1
+  spec:
+   containers:
+   - image: nginx
+     name: ashuc1
+     ports:
+     - containerPort: 80
