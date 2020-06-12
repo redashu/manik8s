@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ashudep1
+  name: ashudep1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ashudep1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ashudep1
+    spec:
+      containers:
+      - image: dockerashu/ciscohttp:ashuv1
+        name: ciscohttp
+        ports:
+        - containerPort: 80
+        env:
+        - name: web
+          valueFrom:
+           configMapKeyRef:
+            name: manicm1
+            key: y 

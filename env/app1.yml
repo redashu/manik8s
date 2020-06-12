@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: podx
+  name: podx
+spec:
+  containers:
+  - image: dockerashu/ciscohttp:ashuv1
+    name: podx
+    ports:
+    - containerPort: 80
+    env:
+    - name: web   #  name of variable from Dockerfile 
+      value: app1   #  it is similar  docker run -e  web=app1  
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
